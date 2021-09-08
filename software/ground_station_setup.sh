@@ -17,6 +17,9 @@ folders_to_link=(
     rover_science
 )
 
+# Ensure that we have all the ROS environment variables
+source /opt/ros/kinetic/setup.bash
+
 # Print heading
 echo "Setting up ROS packages for ground_station."
 
