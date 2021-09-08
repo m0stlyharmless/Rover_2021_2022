@@ -28,6 +28,9 @@ catkin_workspace_dir="catkin_workspace"
 catkin_workspace_path="$HOME/$catkin_workspace_dir"
 catkin_src_path="$catkin_workspace_path/src"
 
+# Make the full catkin_src_path, if it doesn't already exist
+mkdir -p $catkin_src_path
+
 # Get the rover software directory
 github_rover_repo_dir="Github/Rover_2020_2021"
 github_rover_packages_path="$HOME/$github_rover_repo_dir/software/ros_packages"
