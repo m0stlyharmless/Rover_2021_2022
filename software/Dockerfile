@@ -1,26 +1,27 @@
 from ros:kinetic
 
 arg PROJECT_DIR=Rover_2020_2021
-arg HOME_PATH=/home/rosuser
+arg OURUSER=rover
+arg HOME_PATH=/home/$OURUSER
 
 # since we are all at OSU, it makes sense to use the OSU OSL's repo instead
 run sed -i 's@http://archive.ubuntu.com/ubuntu/@http://ubuntu.osuosl.org/ubuntu@g' /etc/apt/sources.list
 
 run sudo apt-get update && sudo apt-get -y dist-upgrade
-run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials xserver-xephyr ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit ros-kinetic-moveit-visual-tools
+run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials xserver-xephyr ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit ros-kinetic-moveit-visual-tools x11-apps
 
 # set up a non-root user for running our code
-run useradd -ms /bin/bash rosuser
+run useradd -ms /bin/bash $OURUSER
 
-user rosuser
+user $OURUSER
 workdir $HOME_PATH
 
-volume /home/rosuser/Github/$PROJECT_DIR
+# provide a volume so that the container can see the project
+volume $HOME_PATH/Github/$PROJECT_DIR
 
+# add setup script, run it, and remove it when finished
 add ground_station_setup.sh $HOME_PATH/ground_station_setup.sh
-
 run bash ground_station_setup.sh
-
 run rm ground_station_setup.sh
 
 # add some code to the workspace
@@ -32,5 +33,4 @@ run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/rover_arm_moveit_
 run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/mr1718-arm-urdf_export ~/catkin_workspace/src/mr1718-arm-urdf_export
 
 run rosdep update
-#run rosdep install -y --from-paths . --ignore-src --rosdistro kinetic
 
