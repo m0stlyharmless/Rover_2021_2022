@@ -35,7 +35,7 @@ run cd ~/catkin_workspace/src && git clone -b kinetic-devel https://github.com/r
 run cd ~/catkin_workspace/src && git clone -b kinetic-devel https://github.com/ros-planning/panda_moveit_config.git
 
 # apply moveit symlinks
-run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/rover_arm_moveit_config ~/catkin_workspace/src/rover_arm_moveit_config
+run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/rover_arm_ik/rover_arm_moveit_config ~/catkin_workspace/src/rover_arm_moveit_config
 run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/mr1718-arm-urdf_export ~/catkin_workspace/src/mr1718-arm-urdf_export
 
 run rosdep update
