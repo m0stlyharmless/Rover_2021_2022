@@ -7,7 +7,7 @@ arg HOME_PATH=/home/rosuser
 run sed -i 's@http://archive.ubuntu.com/ubuntu/@http://ubuntu.osuosl.org/ubuntu@g' /etc/apt/sources.list
 
 run sudo apt-get update && sudo apt-get -y dist-upgrade
-run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials xserver-xephyr ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit
+run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials xserver-xephyr ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit ros-kinetic-moveit-visual-tools
 
 # set up a non-root user for running our code
 run useradd -ms /bin/bash rosuser

@@ -203,3 +203,5 @@ install(TARGETS rover_arm
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_dependencies(rover_arm rover_arm_generate_messages_cpp)
