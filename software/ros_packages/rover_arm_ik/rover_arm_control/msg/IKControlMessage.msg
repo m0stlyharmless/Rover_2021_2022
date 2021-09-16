@@ -1,0 +1,3 @@
+bool controllers_started
+bool start_button
+bool stop_button
