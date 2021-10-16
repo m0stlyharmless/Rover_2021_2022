@@ -38,6 +38,20 @@ roslaunch rover_main ground_station_single_screen.launch
 
 This will launch the groundstation within the emulated displays. The emulated displays will appears as windows.
 
+### Running the Ground Station with Docker
+
+It is possible to run the ground station through [Docker](https://www.docker.com/). The advantage of this is that you get an easily reproducible local build environment that can run on top of your preferred Linux distro in an isolated manner. Please refer to the Docker website for details. Notably, after installing the Docker package, follow the [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/).
+
+To produce a Docker container from the Dockerfile:
+
+`docker build -t groundstation .`
+
+To run the groundstation container:
+
+`./dockergs`
+
+Please keep in mind that Docker containers are ephemeral. Additional dependencies that are needed should be added to the Dockerfile followed by rebuilding the container. Changes to the project directory on the host system will be immediately reflected from inside the Docker container due to that being mounted as a volume, however.
+
 
 ## Making Changes
 
