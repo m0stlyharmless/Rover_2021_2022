@@ -40,4 +40,4 @@ run ln -s $HOME_PATH/Github/$PROJECT_DIR/software/ros_packages/mr1718-arm-urdf_e
 
 run rosdep update
 
-run echo "source ~/catkin_workspace/devel/setup.bash >> .bashrc"
+run echo "source ~/catkin_workspace/devel/setup.bash" >> .bashrc
