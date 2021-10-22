@@ -8,7 +8,7 @@ arg HOME_PATH=/home/$OURUSER
 run sed -i 's@http://archive.ubuntu.com/ubuntu/@http://ubuntu.osuosl.org/ubuntu@g' /etc/apt/sources.list
 
 run sudo apt-get update && sudo apt-get -y dist-upgrade
-run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit ros-kinetic-moveit-visual-tools x11-apps python-pip
+run sudo apt-get -y install ros-kinetic-desktop-full ros-kinetic-ros-tutorials ros-kinetic-catkin python-catkin-tools ros-kinetic-moveit ros-kinetic-moveit-visual-tools x11-apps python-pip mesa-utils mesa-utils-extra
 
 # add dependencies that are needed from pip
 run sudo pip install QDarkStyle qimage2ndarray
